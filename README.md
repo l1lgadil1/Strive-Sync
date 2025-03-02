@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StriveSync - Group Self-Development Challenge Platform
+
+StriveSync is a modern web application designed to help users create, join, and track self-development challenges. Whether you're looking to build new habits, improve your skills, or achieve personal goals, StriveSync provides a social and gamified environment to keep you motivated and accountable.
+
+## Features
+
+- **Challenge Management**: Create and join challenges with customizable rules, durations, and categories
+- **Progress Tracking**: Track your progress through challenges with visual indicators and statistics
+- **Social Interaction**: Connect with friends, join team challenges, and share your achievements
+- **Gamification**: Earn points, badges, and level up as you complete challenges
+- **User Profiles**: Showcase your achievements and track your personal growth journey
+
+## Tech Stack
+
+- **Frontend**:
+  - Next.js 14 with App Router
+  - TypeScript
+  - Tailwind CSS for styling
+  - React Server Components for optimal performance
+  - Radix UI for accessible component primitives
+
+- **State Management**:
+  - React Context API for local state
+  - React Hook Form for form handling
+  - Zod for schema validation
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18.0 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/strivesync.git
+   cd strivesync
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Project Structure
+
+```
+strivesync/
+├── public/             # Static assets
+├── src/
+│   ├── app/            # Next.js App Router pages
+│   ├── components/     # Reusable UI components
+│   │   ├── layout/     # Layout components
+│   │   └── ui/         # UI components
+│   ├── lib/            # Utility functions
+│   └── types/          # TypeScript type definitions
+├── .gitignore
+├── next.config.js
+├── package.json
+├── README.md
+├── tailwind.config.js
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Home**: Landing page with feature highlights and call-to-action
+- **Dashboard**: User's personal dashboard with stats and active challenges
+- **Challenges**: Browse and filter available challenges
+- **Challenge Detail**: View specific challenge details and progress
+- **Profile**: User profile with achievements and activity history
+- **Authentication**: Login and registration pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Future Enhancements
 
-## Learn More
+- Integration with fitness tracking APIs
+- Advanced analytics and insights
+- Mobile application
+- Community forums and discussion boards
+- Challenge templates and recommendations
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgments
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Inspired by habit-tracking and self-improvement communities
+- Built with modern web development best practices
+- Designed for optimal user experience and accessibility
+# Strive-Sync
