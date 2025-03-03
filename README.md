@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StriveSync - Self-Improvement Challenges Platform
+
+StriveSync is a gamified self-improvement platform that helps users create and participate in challenges across multiple life dimensions, track their progress, and connect with like-minded individuals.
+
+## Features
+
+- **Challenge Creation & Discovery**: Create custom challenges or join existing ones across various categories (fitness, learning, mindfulness, etc.)
+- **Progress Tracking**: Track your daily progress and visualize your improvement over time
+- **Social Interaction**: Connect with other participants, share experiences, and motivate each other
+- **Gamification**: Earn points, badges, and achievements as you complete challenges
+- **Analytics**: Get insights into your habits and progress with detailed analytics
+
+## Tech Stack
+
+### Frontend
+- **Framework**: Next.js with TypeScript
+- **UI Libraries**: Material UI, Framer Motion
+- **State Management**: Zustand, React Context
+- **Data Fetching**: TanStack React Query
+- **Form Validation**: Zod
+
+### Backend (Planned)
+- **Framework**: Spring Boot (Java)
+- **Database**: PostgreSQL
+- **Authentication**: JWT
+- **API**: RESTful
+- **Caching**: Redis
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+ and npm
 
+### Installation
+
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/strivesync.git
+cd strivesync
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                  # Next.js App Router pages and layouts
+├── components/
+│   ├── ui/               # Reusable UI components
+│   ├── features/         # Feature-specific components
+│   ├── layout/           # Layout components
+│   └── forms/            # Form components
+├── lib/
+│   ├── api/              # API client and services
+│   ├── utils/            # Utility functions
+│   ├── hooks/            # Custom React hooks
+│   ├── store/            # Zustand stores
+│   ├── constants/        # Application constants
+│   └── validations/      # Form validation schemas
+├── providers/            # Context providers
+├── types/                # TypeScript type definitions
+└── styles/               # Global styles
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Material UI](https://mui.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Zustand](https://github.com/pmndrs/zustand)
+- [TanStack React Query](https://tanstack.com/query/latest) 
+
+Add changes that we made for future CursorAI agents: What we have now, files,components,their location, their fetaures, what they responsible for, ...etc needed

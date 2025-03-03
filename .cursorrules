@@ -1,0 +1,411 @@
+// CursorAgent Rules for StriveSync - Self-Improvement Challenges Platform
+// This file defines project-specific rules, conventions, and preferences for AI assistance
+
+// PROJECT METADATA
+{
+  "name": "StriveSync",
+  "description": "A gamified self-improvement platform with challenges across multiple life dimensions",
+  "version": "0.1.0",
+  "repository": "https://github.com/yourusername/strivesync",
+  "author": "Your Name"
+}
+
+// TECHNOLOGY STACK
+{
+  "frontend": {
+    "framework": "Next.js",
+    "language": "TypeScript",
+    "state_management": ["Zustand", "React Context"],
+    "ui_libraries": ["Material UI", "Framer Motion"],
+    "styling": ["Material UI styled components", "CSS Modules", "CSS Variables"]
+  },
+  "backend": {
+    "framework": "Spring Boot",
+    "language": "Java",
+    "database": "PostgreSQL",
+    "orm": "Hibernate/JPA",
+    "caching": "Redis",
+    "authentication": "JWT",
+    "api": "RESTful",
+    "build_tool": "Maven"
+  },
+  "infrastructure": {
+    "hosting": {
+      "frontend": "Vercel",
+      "backend": "Docker/Kubernetes"
+    },
+    "database_hosting": "AWS RDS or DigitalOcean",
+    "ci_cd": "GitHub Actions",
+    "monitoring": "Prometheus/Grafana"
+  }
+}
+
+// CODE STYLE GUIDELINES
+{
+  "frontend": {
+    "general": {
+      "indentation": "2 spaces",
+      "line_length": "80 characters preferred, 100 maximum",
+      "quotes": "single quotes for strings, double quotes for JSX attributes",
+      "semicolons": "required"
+    },
+    "typescript": {
+      "strictness": "strict mode enabled",
+      "type_imports": "import type { Type } from 'module'",
+      "enums": "prefer union types over enums",
+      "null_handling": "use undefined for absence of value, null for intentional absence"
+    },
+    "react": {
+      "component_style": "functional components with hooks",
+      "props_interface": "use interface for component props",
+      "state_management": "use hooks for local state, Zustand for global state",
+      "event_handlers": "prefix with 'handle', e.g., 'handleSubmit'",
+      "component_organization": "group by feature, then by type"
+    },
+    "material_ui": {
+      "theming": "use theme provider with custom theme",
+      "styling": "prefer sx prop for component-specific styling, use styled API for reusable components",
+      "component_imports": "use named imports from specific paths for tree-shaking",
+      "responsive_design": "use Material UI's breakpoint system for responsive layouts"
+    },
+    "naming_conventions": {
+      "components": "PascalCase",
+      "functions": "camelCase",
+      "variables": "camelCase",
+      "constants": "UPPER_SNAKE_CASE for true constants, camelCase for configuration",
+      "interfaces": "PascalCase with 'I' prefix, e.g., 'IUser'",
+      "types": "PascalCase",
+      "files": {
+        "components": "kebab-case.tsx",
+        "hooks": "use-kebab-case.ts",
+        "utils": "kebab-case.ts",
+        "types": "kebab-case.types.ts",
+        "api": "kebab-case.api.ts"
+      }
+    }
+  },
+  "backend": {
+    "java": {
+      "indentation": "4 spaces",
+      "line_length": "120 characters maximum",
+      "braces": "same line for control statements, next line for method/class declarations",
+      "imports": "organized by package, no wildcards"
+    },
+    "naming_conventions": {
+      "classes": "PascalCase",
+      "interfaces": "PascalCase",
+      "methods": "camelCase",
+      "variables": "camelCase",
+      "constants": "UPPER_SNAKE_CASE",
+      "packages": "lowercase, domain-based naming (com.strivesync.module)"
+    },
+    "spring_boot": {
+      "controllers": "suffix with 'Controller'",
+      "services": "suffix with 'Service'",
+      "repositories": "suffix with 'Repository'",
+      "entities": "domain model names, no suffix",
+      "dtos": "suffix with 'DTO' or 'Request'/'Response'",
+      "exceptions": "suffix with 'Exception'"
+    },
+    "hibernate": {
+      "entity_annotations": "use JPA annotations (@Entity, @Table, etc.)",
+      "id_generation": "use @GeneratedValue with strategy = GenerationType.IDENTITY",
+      "relationships": "use appropriate annotations (@OneToMany, @ManyToOne, etc.)",
+      "fetch_type": "prefer LAZY loading where appropriate",
+      "naming_strategy": "use ImprovedNamingStrategy"
+    }
+  }
+}
+
+// FOLDER STRUCTURE
+{
+  "frontend": {
+    "src": {
+      "app": "Next.js App Router pages and layouts",
+      "components": {
+        "ui": "Reusable UI components",
+        "features": "Feature-specific components organized by domain",
+        "layout": "Layout components (header, footer, etc.)",
+        "forms": "Form components and form-related utilities"
+      },
+      "lib": {
+        "api": "API client and service functions",
+        "utils": "Utility functions",
+        "hooks": "Custom React hooks",
+        "constants": "Application constants",
+        "validations": "Form validation schemas"
+      },
+      "providers": "Context providers for global state",
+      "types": "TypeScript type definitions",
+      "styles": "Global styles and Tailwind configuration"
+    }
+  },
+  "backend": {
+    "src/main/java/com/strivesync": {
+      "api": {
+        "controller": "REST API controllers",
+        "dto": {
+          "request": "Request DTOs",
+          "response": "Response DTOs"
+        },
+        "exception": "Custom exceptions and exception handlers"
+      },
+      "domain": "Domain model entities",
+      "repository": "Data access repositories",
+      "service": {
+        "impl": "Service implementations"
+      },
+      "config": "Configuration classes",
+      "security": "Security-related classes",
+      "util": "Utility classes"
+    },
+    "src/main/resources": {
+      "application.yml": "Application configuration",
+      "db/migration": "Database migration scripts (if using Flyway)"
+    },
+    "src/test": "Test classes mirroring main structure"
+  }
+}
+
+// COMPONENT PATTERNS
+{
+  "frontend": {
+    "component_template": "
+      import { type FC } from 'react';
+      import { Box, Typography } from '@mui/material';
+      
+      interface IComponentProps {
+        // props here
+      }
+      
+      export const Component: FC<IComponentProps> = ({ prop1, prop2 }) => {
+        // component logic
+        
+        return (
+          <Box sx={{ /* styling here */ }}>
+            <Typography variant=\"h6\">Component Content</Typography>
+            {/* component content */}
+          </Box>
+        );
+      };
+    ",
+    "hook_template": "
+      export function useHookName(param: ParamType): ReturnType {
+        // hook logic
+        
+        return {
+          // return values
+        };
+      }
+    "
+  },
+  "backend": {
+    "controller_template": "
+      @RestController
+      @RequestMapping(\"/api/resource\")
+      public class ResourceController {
+          
+          private final ResourceService resourceService;
+          
+          @Autowired
+          public ResourceController(ResourceService resourceService) {
+              this.resourceService = resourceService;
+          }
+          
+          @GetMapping
+          public ResponseEntity<List<ResourceResponse>> getAllResources() {
+              return ResponseEntity.ok(resourceService.getAllResources());
+          }
+          
+          // other endpoints
+      }
+    ",
+    "service_template": "
+      @Service
+      public class ResourceServiceImpl implements ResourceService {
+          
+          private final ResourceRepository resourceRepository;
+          
+          @Autowired
+          public ResourceServiceImpl(ResourceRepository resourceRepository) {
+              this.resourceRepository = resourceRepository;
+          }
+          
+          @Override
+          public List<ResourceResponse> getAllResources() {
+              // implementation
+          }
+          
+          // other methods
+      }
+    ",
+    "entity_template": "
+      @Entity
+      @Table(name = \"resources\")
+      public class Resource {
+          
+          @Id
+          @GeneratedValue(strategy = GenerationType.IDENTITY)
+          private Long id;
+          
+          @Column(nullable = false)
+          private String name;
+          
+          // other fields, getters, setters
+      }
+    "
+  }
+}
+
+// FEATURE DOMAINS
+[
+  "auth",
+  "challenges",
+  "profile",
+  "dashboard",
+  "social",
+  "analytics",
+  "notifications",
+  "settings"
+]
+
+// DATABASE SCHEMA GUIDELINES
+{
+  "naming": {
+    "tables": "snake_case plural (users, challenges)",
+    "columns": "snake_case",
+    "primary_keys": "id",
+    "foreign_keys": "entity_id (e.g., user_id)",
+    "junction_tables": "combine entity names (e.g., user_challenges)"
+  },
+  "conventions": {
+    "ids": "use auto-incrementing integers for primary keys",
+    "timestamps": "include created_at and updated_at on all tables",
+    "soft_delete": "use deleted_at timestamp for soft deletes",
+    "enums": "use enum types in PostgreSQL where appropriate"
+  },
+  "common_fields": {
+    "users": ["id", "username", "email", "password_hash", "full_name", "created_at", "updated_at"],
+    "challenges": ["id", "title", "description", "rules", "start_date", "end_date", "created_by", "created_at", "updated_at"]
+  }
+}
+
+// COMMIT MESSAGE CONVENTIONS
+{
+  "format": "<type>(<scope>): <subject>",
+  "types": [
+    "feat: A new feature",
+    "fix: A bug fix",
+    "docs: Documentation changes",
+    "style: Code style changes (formatting, etc.)",
+    "refactor: Code changes that neither fix bugs nor add features",
+    "perf: Performance improvements",
+    "test: Adding or modifying tests",
+    "chore: Changes to build process or auxiliary tools"
+  ],
+  "scope": "Optional, can be component name, feature area, etc.",
+  "subject": "Imperative, present tense description"
+}
+
+// ACCESSIBILITY REQUIREMENTS
+{
+  "standards": "WCAG 2.1 AA compliance",
+  "testing": "Use axe-core for automated testing",
+  "focus_management": "Ensure proper keyboard navigation",
+  "aria": "Use appropriate ARIA attributes",
+  "color_contrast": "Maintain 4.5:1 contrast ratio for text"
+}
+
+// PERFORMANCE GUIDELINES
+{
+  "frontend": {
+    "image_optimization": "Use Next.js Image component",
+    "code_splitting": "Use dynamic imports for large components",
+    "rendering_strategy": "Prefer SSR/SSG over CSR when possible",
+    "bundle_size": "Monitor with Webpack Bundle Analyzer",
+    "api_optimization": "Use React Query for caching and deduplication",
+    "material_ui_optimization": {
+      "tree_shaking": "Import components directly from @mui/material/ComponentName",
+      "emotion_cache": "Configure emotion cache for SSR",
+      "theme_object": "Minimize theme object size by only including necessary customizations",
+      "component_memoization": "Use React.memo for complex Material UI components"
+    }
+  },
+  "backend": {
+    "database": {
+      "indexing": "Add indexes for frequently queried columns",
+      "query_optimization": "Use EXPLAIN ANALYZE to optimize complex queries",
+      "connection_pooling": "Configure HikariCP properly",
+      "batch_processing": "Use batch operations for bulk data"
+    },
+    "caching": {
+      "strategy": "Use Redis for frequently accessed data",
+      "hibernate_cache": "Configure second-level cache for entities",
+      "query_cache": "Enable query cache for read-heavy operations"
+    },
+    "api": {
+      "pagination": "Implement pagination for list endpoints",
+      "filtering": "Support filtering with query parameters",
+      "compression": "Enable GZIP compression for responses",
+      "rate_limiting": "Implement rate limiting for public endpoints"
+    }
+  }
+}
+
+// SECURITY PRACTICES
+{
+  "frontend": {
+    "authentication": "Use secure HTTP-only cookies for tokens",
+    "authorization": "Implement role-based access control",
+    "data_validation": "Validate all inputs with Zod",
+    "csrf_protection": "Implement CSRF tokens for forms",
+    "content_security": "Set appropriate CSP headers"
+  },
+  "backend": {
+    "authentication": "Use JWT with proper expiration and refresh mechanism",
+    "password_storage": "Use BCrypt for password hashing",
+    "input_validation": "Validate all request data",
+    "sql_injection": "Use parameterized queries or JPA",
+    "logging": "Don't log sensitive information",
+    "secrets": "Store secrets in environment variables or vault"
+  }
+}
+
+// TESTING STRATEGY
+{
+  "frontend": {
+    "unit_tests": "Jest for utility functions and hooks",
+    "component_tests": "React Testing Library for components",
+    "e2e_tests": "Playwright for critical user flows",
+    "coverage": "Aim for 80% code coverage"
+  },
+  "backend": {
+    "unit_tests": "JUnit 5 for service and utility classes",
+    "integration_tests": "Spring Boot Test for repository and controller layers",
+    "api_tests": "REST Assured for API testing",
+    "test_containers": "Use Testcontainers for database tests",
+    "coverage": "Aim for 80% code coverage with JaCoCo"
+  }
+}
+
+// DOCUMENTATION REQUIREMENTS
+{
+  "frontend": {
+    "components": "Document props with JSDoc comments",
+    "functions": "Document parameters, return values, and examples",
+    "api_clients": "Document endpoints and data structures"
+  },
+  "backend": {
+    "api": "Document with Swagger/OpenAPI annotations",
+    "javadoc": "Add Javadoc for all public methods and classes",
+    "readme": "Maintain up-to-date README with setup instructions"
+  }
+}
+
+// AI ASSISTANT PREFERENCES
+{
+  "code_generation": "Prefer small, focused components/classes over large ones",
+  "explanations": "Include comments for complex logic",
+  "refactoring": "Suggest performance and maintainability improvements",
+  "learning_resources": "Suggest relevant documentation and tutorials"
+} 
