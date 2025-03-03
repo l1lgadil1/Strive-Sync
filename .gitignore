@@ -13,8 +13,6 @@
 # testing
 /coverage
 
-.cursorrules
-
 # next.js
 /.next/
 /out/
@@ -25,8 +23,6 @@
 # misc
 .DS_Store
 *.pem
-
-.prompts-history.txt
 
 # debug
 npm-debug.log*
