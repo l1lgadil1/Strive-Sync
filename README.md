@@ -24,12 +24,24 @@ StriveSync is a modern web application designed to help users create, join, and 
   - React Hook Form for form handling
   - Zod for schema validation
 
+- **Backend**:
+  - Spring Boot 3.2.2
+  - Java 17
+  - PostgreSQL for data persistence
+  - Redis for caching
+  - JWT for authentication
+  - Hibernate/JPA for ORM
+  - Flyway for database migrations
+
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 18.0 or later
 - npm or yarn
+- Java 17 or later
+- Maven 3.8 or later
+- Docker and Docker Compose (for local database setup)
 
 ### Installation
 
@@ -39,34 +51,55 @@ StriveSync is a modern web application designed to help users create, join, and 
    cd strivesync
    ```
 
-2. Install dependencies:
+2. Install frontend dependencies:
    ```bash
    npm install
    # or
    yarn install
    ```
 
-3. Run the development server:
+3. Start the local database services:
    ```bash
+   docker-compose up -d
+   ```
+
+4. Build and run the backend:
+   ```bash
+   cd backend
+   mvn spring-boot:run
+   ```
+
+5. Run the frontend development server:
+   ```bash
+   cd ..
    npm run dev
    # or
    yarn dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ## Project Structure
 
 ```
 strivesync/
-├── public/             # Static assets
-├── src/
-│   ├── app/            # Next.js App Router pages
-│   ├── components/     # Reusable UI components
-│   │   ├── layout/     # Layout components
-│   │   └── ui/         # UI components
-│   ├── lib/            # Utility functions
-│   └── types/          # TypeScript type definitions
+├── backend/                # Spring Boot backend
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/      # Java source code
+│   │   │   └── resources/ # Configuration and migrations
+│   │   └── test/          # Test files
+│   ├── pom.xml            # Maven configuration
+│   └── README.md          # Backend documentation
+├── public/                # Static assets
+├── src/                   # Frontend source code
+│   ├── app/               # Next.js App Router pages
+│   ├── components/        # Reusable UI components
+│   │   ├── layout/        # Layout components
+│   │   └── ui/            # UI components
+│   ├── lib/               # Utility functions
+│   └── types/             # TypeScript type definitions
+├── docker-compose.yml     # Docker Compose configuration
 ├── .gitignore
 ├── next.config.js
 ├── package.json
@@ -83,6 +116,14 @@ strivesync/
 - **Challenge Detail**: View specific challenge details and progress
 - **Profile**: User profile with achievements and activity history
 - **Authentication**: Login and registration pages
+
+## API Documentation
+
+Once the backend is running, you can access the API documentation at:
+
+```
+http://localhost:8080/api/swagger-ui.html
+```
 
 ## Future Enhancements
 
@@ -105,4 +146,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Inspired by habit-tracking and self-improvement communities
 - Built with modern web development best practices
 - Designed for optimal user experience and accessibility
-# Strive-Sync
