@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+.cursorrules
+.prompts-history.txt
+
 # production
 /build
 
